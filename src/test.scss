@@ -1,0 +1,12 @@
+$primary-color: #333;
+
+.container {
+  .header {
+    color: $primary-color;
+    background-color: #fff;
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+}

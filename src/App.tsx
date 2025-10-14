@@ -1,9 +1,6 @@
 function App() {
-  return (
-    <>
-      
-    </>
-  )
+  const testVariable = 'Hello, World';
+  return <>{testVariable}</>;
 }
 
-export default App
+export default App;

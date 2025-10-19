@@ -65,4 +65,13 @@ export default class ApiBase {
   delete<T>(endpoint: string, options: RequestOptions = {}): Promise<T> {
     return this.request<T>(endpoint, { ...options, method: 'DELETE' });
   }
+
+  createAbortController(): unknown {
+    if (this.adapter.createAbortController) {
+      return this.adapter.createAbortController();
+    } else {
+      console.warn('AbortController creation is not supported by the current adapter.');
+      return null;
+    }
+  }
 }

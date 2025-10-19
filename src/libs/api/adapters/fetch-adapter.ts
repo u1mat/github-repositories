@@ -47,4 +47,8 @@ export default class FetchAdapter implements HttpAdapter {
       throw error;
     }
   }
+
+  createAbortController(): AbortController {
+    return new AbortController();
+  }
 }

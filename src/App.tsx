@@ -1,11 +1,14 @@
 import { useRef } from 'react';
-import { fetchApi } from './libs/api';
+import { fetchApi } from './shared/libs/api';
+import { env } from './shared/libs/env';
 
 function App() {
   const currentProviderApi = fetchApi;
   const currentAbortController = useRef<AbortController | null>(null);
 
   const handleClick = async () => {
+    console.log(env.VITE_ENABLED_ANALYTICS);
+
     try {
       if (currentAbortController.current) {
         currentAbortController.current.abort();
